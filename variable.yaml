@@ -9,3 +9,13 @@
   - name: print information
     ansible.builtin.debug:
       msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
+
+  - name: print information
+    vars:
+      NAME: James
+    ansible.builtin.debug:
+      msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
+
+  - name: print information
+    ansible.builtin.debug:
+      msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
