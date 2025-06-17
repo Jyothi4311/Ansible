@@ -19,3 +19,15 @@
   - name: print information
     ansible.builtin.debug:
       msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
+
+
+
+- name: variable with file
+  hosts: local
+  connection: local
+  vars_files:
+  - varinfo.yaml
+  tasks:
+  - name: print course information
+    ansible.builtin.debug:
+      msg: "Hello I am learning {{}}, Duration is {{}}, Trainer is {{}}"
