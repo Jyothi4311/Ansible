@@ -1,0 +1,11 @@
+- name: variable
+  hosts: local
+  connection: local
+  vars:
+    NAME: Jyothi
+    EMAILID: abc@gmail.com
+    ADDRESS: BANGALOOR
+  tasks:
+  - name: print information
+    ansible.builtin.debug:
+    msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
