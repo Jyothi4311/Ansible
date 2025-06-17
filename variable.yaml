@@ -8,4 +8,4 @@
   tasks:
   - name: print information
     ansible.builtin.debug:
-    msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
+      msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
