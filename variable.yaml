@@ -9,7 +9,7 @@
   - name: print information
     ansible.builtin.debug:
       msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
-
+#TASK VARS
   - name: print information
     vars:
       NAME: James
@@ -20,7 +20,7 @@
     ansible.builtin.debug:
       msg: "Name {{ NAME }}, EmailID {{ EMAILID }}, address {{ ADDRESS }} "
 
-
+#VARIABLES FROM FILES
 
 - name: variable with file
   hosts: local
@@ -31,3 +31,23 @@
   - name: print course information
     ansible.builtin.debug:
       msg: "Hello I am learning {{ COURSE }}, Duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
+
+#PROMPT VARIABLES
+
+- name: variables from PROMPT
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: USERNAME
+    prompt: please enter your username
+    private: true
+
+  - name: PASSWORD
+    prompt: please enter your password
+    private: false
+  tasks:
+   - name: printing your information
+     ansible.builtin.debug:
+        msg: "Hello username is: {{ USERNAME }}, password is: {{ password }}"
+     
+    
