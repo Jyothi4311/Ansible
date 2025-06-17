@@ -2,6 +2,22 @@
   hosts: local
   connection: local
   tasks:
-  - name: print Hello world
+  - name: print Name
     ansible.builtin.debug:
-      msg: "Helloworld"
+      msg: "Hello Jyothi"
+  
+  - name: print Full Name
+    ansible.builtin.debug:
+      msg: "Hello Jyothi Veeranala"
+
+- name: Swathi
+  hosts: local
+  connection: local
+  tasks:
+  - name: print Name
+    ansible.builtin.debug:
+      msg: "Hello swathi"
+  
+  - name: print Full Name
+    ansible.builtin.debug:
+      msg: "Hello Jyothi Swathi"
