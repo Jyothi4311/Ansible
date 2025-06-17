@@ -40,7 +40,7 @@
   vars_prompt:
   - name: USERNAME
     prompt: please enter your username
-    private: true
+    private: false
 
   - name: PASSWORD
     prompt: please enter your password
@@ -48,6 +48,5 @@
   tasks:
   - name: printing your information
     ansible.builtin.debug:
-      msg: "Hello username is: {{ USERNAME }}, password is: {{ password }}"
-     
+       msg: "Hello username is: {{ USERNAME }}, password is: {{ password }}"
     
