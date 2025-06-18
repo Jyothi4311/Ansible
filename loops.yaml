@@ -1,0 +1,27 @@
+- name: loops
+  hosts: local
+  connection: local
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: "Hello, {{ item }}" #item here is reserved keyword
+    loop:
+    - Suresh
+    - Ramesh
+    - Joseph
+    - Raheem
+
+#Install package
+
+- name: install packages
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install packages
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: installed
+    loop:
+    - mysql
+    - nginx
+    - zip
