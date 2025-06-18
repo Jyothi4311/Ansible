@@ -5,3 +5,18 @@
   - name: check undefined variable
     ansible.builtin.debug:
       msg: "Hello, {{ person | default('Ramesh') }}"
+
+#names
+
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+    persons: "Ramesh,Suresh,Raheem,Joseph"
+  tasks:
+  - name: check undefined variable
+    ansible.builtin.debug:
+      msg: "Hello, {{ person | default('Ramesh') }}"
+  - name: print names
+    ansible.builtin.debug:
+      msg: "Hello {{ persons | split(',') }}"
