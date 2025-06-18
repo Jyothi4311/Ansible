@@ -19,4 +19,13 @@
       msg: "Hello, {{ person | default('Ramesh') }}"
   - name: print names
     ansible.builtin.debug:
-      msg: "Hello {{ persons | split(',') }}"
+      msg: "Hello {{ persons | split(',') }}" # to make list of strings
+#convert map into list
+  - name: convert map into list
+    vars:
+      course:
+        name: ansible
+        duration: 10HR
+        trainer: sivakumar
+    ansible.builtin.debug:
+      msg: "Course Info: {{ course | dict2items  }}"
