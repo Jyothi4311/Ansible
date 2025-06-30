@@ -8,6 +8,7 @@
 #       name: nginx
 #       state: present
 # # ansible-playbook -i demo.aws_ec2.yaml -e ansible_user=ec2-user -e ansible_password=DevOps321 20.nginx.yaml
+#fork run in task level
 
 - name: nginx installation
   #hosts: all
@@ -25,3 +26,4 @@
     ansible.builtin.service:
       name: nginx
       state: started
+#to run nginx in serial wise
