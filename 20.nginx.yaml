@@ -1,16 +1,27 @@
+# #install nginx for all servers
+# - name: nginx installation
+#   hosts: all
+#   become: yes
+#   tasks:
+#   - name: install nginx
+#     ansible.builtin.package:
+#       name: nginx
+#       state: present
+# # ansible-playbook -i demo.aws_ec2.yaml -e ansible_user=ec2-user -e ansible_password=DevOps321 20.nginx.yaml
+
 - name: nginx installation
   #hosts: all
-  hosts: all
+  hosts: web
   become: yes
-  #serial: 2
+  serial: 2
   tasks:
   - name: install nginx
     ansible.builtin.package:
       name: nginx
       state: present
-  # - name: run nginx
-  #   tags:
-  #   - run
-  #   ansible.builtin.service:
-  #     name: nginx
-  #     state: started
+  - name: run nginx
+    tags:
+    - run
+    ansible.builtin.service:
+      name: nginx
+      state: started
